@@ -1,12 +1,13 @@
-public class Driver implements MyFunction {
+public class Driver  {
 
-    public  int apply(MyFunction f, int i) {
-        return f.apply(i);
+    public void applyAndPrint(MyFunction givenFunction, int x, int y) {
+
+        for (int i = x; i <= y; i++) {
+            System.out.println(givenFunction.apply(i));
+        }
+
     }
 
 
-    @Override
-    public int apply(int i) {
-        return 0;
-    }
+
 }

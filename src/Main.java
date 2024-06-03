@@ -2,17 +2,12 @@ public class Main {
     public static void main(String[] args) {
 
         Driver myDriver = new Driver();
+        // This is the lambda expression
 
-        MyFunction f = new MyFunction() {
-            public int apply(int i) {
-                return i + 1;
-            }
-        };
+        MyFunction printFun = (int i) -> i ;
 
-        System.out.println(myDriver.apply(f, 5));
-
+        myDriver.applyAndPrint(printFun, 1, 5);
     }
-
 
 
 }
