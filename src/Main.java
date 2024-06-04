@@ -1,10 +1,12 @@
+import java.util.function.Predicate;
+
 public class Main {
     public static void main(String[] args) {
 
         Driver myDriver = new Driver();
         // This is the lambda expression
 
-        MyFunction printFun = (int i) -> i;
+        MyFunction printFun = (i) -> i;
 
         myDriver.applyAndPrint(printFun, 1, 5);
 
@@ -148,6 +150,42 @@ public class Main {
 
         }, 0, 5);
 
+        System.out.println("************ exercise 5d ************");
+
+        Predicate<Integer> odd = new Predicate<Integer>() {
+            @Override
+            public boolean test(Integer i) {
+                if (i % 2 == 0) {
+                    return false;
+                } else {
+                    return true;
+
+                }
+
+            }
+        };
+
+        Predicate<Integer> even = (i) -> i % 2 == 0;
+
+
+        System.out.println("************ exercise 5e ************");
+
+        Conditionate myCondiPow = (int i) -> (i * i);
+
+        myDriver.applyAndPrint(myCondiPow.conditionateInput(even), 1, 20);
+
+        System.out.println("************ exercise 5f ************");
+
+
+        Conditionate myCondiFac = (i) -> {
+            int result = 1;
+            for (int j = i; j > 0; j--) {
+                result *= j;
+            }
+            return result;
+        };
+
+        myDriver.applyAndPrint(x -> myCondiFac.conditionateInput(odd).apply(x), 1, 20);
 
     }
 
